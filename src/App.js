@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { Layout, Image, Typography } from "antd";
+import Logo from "./images/insta.png";
+import Home from "./components/Home";
+import styles from "./styles";
+import 'antd/dist/antd.min.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const { Title } = Typography;
+const { Header, Footer } = Layout;
+
+const App = () => {
+    return (
+        <Layout style={styles.layout}>
+            <Header style={styles.header}>
+                <Image style={styles.image} width={45} preview={false} src={Logo} />
+                &nbsp;
+                <Title style={styles.title}>Insta</Title>
+                </Header>
+                <Home />
+                <Footer style={styles.footer}>
+                    2022 Insta
+                </Footer>
+        </Layout>
+    )
 }
 
 export default App;
